@@ -1,0 +1,203 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  font-size: 18px;
+}
+
+body {
+  padding-top: 0px;
+}
+
+.navigation {
+  background-color: #0056b3;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.navigation ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+.navigation ul li {
+  flex: 1;
+  text-align: center;
+}
+.navigation ul li a {
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: font-size 0.3s ease, color 0.3s ease;
+}
+.navigation ul li a:hover {
+  font-size: 20px;
+  color: #f0f0f0;
+}
+
+.page-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  text-align: center;
+  background: none;
+}
+.page-section[data-bg] {
+  background-image: url("../images/crumbled-paper-ezgif.com-jpg-to-webp-converter.webp");
+}
+.page-section:not(:first-of-type) {
+  border-top: none;
+}
+
+.intro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.intro-image img {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+  loading: lazy;
+}
+
+.intro-info {
+  text-align: left;
+  max-width: 400px;
+}
+
+.bio-skills-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+.bio-skills-container .bio, .bio-skills-container .skills {
+  flex-basis: 45%;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.bio-skills-container.equal-height {
+  align-items: stretch;
+}
+.bio-skills-container.equal-height .bio, .bio-skills-container.equal-height .skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 50px;
+  margin-top: 20px;
+  font-size: 1.1em;
+}
+
+.social-sidebar {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+  background-color: #d5d5d5;
+  padding: 10px 0;
+  border-radius: 0 5px 5px 0;
+}
+.social-sidebar a {
+  display: block;
+}
+.social-sidebar a img {
+  width: 40px;
+  height: 40px;
+  loading: lazy;
+}
+
+@media (max-width: 640px) {
+  .page-section {
+    flex-direction: column;
+  }
+  .bio-skills-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .bio, .skills {
+    width: 80%;
+    margin: 20px auto;
+  }
+}
+.section-1 {
+  margin: 10px;
+  padding: 5px;
+}
+
+.section-2 {
+  margin: 20px;
+  padding: 10px;
+}
+
+.section-3 {
+  margin: 30px;
+  padding: 15px;
+}
+
+header {
+  border: none;
+}
+
+footer {
+  border: none;
+}
+
+section {
+  border: none;
+}
+
+.counter .item-0 {
+  width: 0px;
+}
+.counter .item-2 {
+  width: 20px;
+}
+.counter .item-4 {
+  width: 40px;
+}
+.counter .item-6 {
+  width: 60px;
+}
+.counter .item-8 {
+  width: 80px;
+}
+
+.test-conditional {
+  color: green;
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,220 @@
+// Variabelen
+$font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$primary-color: #0056b3;
+$secondary-color: #333;
+$background-color: #f4f4f4;
+$highlight-color: #f0f0f0;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+// Basisstijl
+body, html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: $font-stack;
+  background-color: $background-color;
+  color: $secondary-color;
+  font-size: 18px;
+}
+
+body {
+  padding-top: 0px;
+}
+
+// Navigatie
+.navigation {
+  background-color: $primary-color;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+
+    li {
+      flex: 1;
+      text-align: center;
+
+      a {
+        display: block;
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 18px;
+        transition: font-size 0.3s ease, color 0.3s ease;
+
+        &:hover {
+          font-size: 20px;
+          color: $highlight-color;
+        }
+      }
+    }
+  }
+}
+
+// Secties
+.page-section {
+  min-height: 100vh;
+  @include flex-center;
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  text-align: center;
+  background: none;
+
+  &[data-bg] {
+    background-image: url('../images/crumbled-paper-ezgif.com-jpg-to-webp-converter.webp');
+  }
+
+  &:not(:first-of-type) {
+    border-top: none; // Verwijder de zwarte randen
+  }
+}
+
+.intro-container {
+  @include flex-center;
+  gap: 20px;
+  background-color: #fff;
+  padding: 40px;
+  @include border-radius(10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.intro-image img {
+  width: 150px;
+  height: auto;
+  @include border-radius(50%);
+  loading: lazy;
+}
+
+.intro-info {
+  text-align: left;
+  max-width: 400px;
+}
+
+.bio-skills-container {
+  @include flex-center;
+  width: 100%;
+  padding: 20px;
+
+  .bio, .skills {
+    flex-basis: 45%;
+    text-align: center;
+    font-size: 1.1em;
+  }
+}
+
+// Socials en Projecten container
+.bio-skills-container.equal-height {
+  align-items: stretch;
+
+  .bio, .skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+// Footer
+footer {
+  background-color: $secondary-color;
+  color: #fff;
+  text-align: center;
+  padding: 50px;
+  margin-top: 20px;
+  font-size: 1.1em;
+}
+
+// Sidebar
+.social-sidebar {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  @include flex-center;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+  background-color: #d5d5d5;
+  padding: 10px 0;
+  @include border-radius(0 5px 5px 0);
+
+  a {
+    display: block;
+
+    img {
+      width: 40px;
+      height: 40px;
+      loading: lazy;
+    }
+  }
+}
+
+// Responsief ontwerp
+@media (max-width: 640px) {
+  .page-section {
+    flex-direction: column;
+  }
+
+  .bio-skills-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bio, .skills {
+    width: 80%;
+    margin: 20px auto;
+  }
+}
+
+// Extra SCSS elementen
+@for $i from 1 through 3 {
+  .section-#{$i} {
+    margin: $i * 10px;
+    padding: $i * 5px;
+  }
+}
+
+$elements: header, footer, section;
+@each $element in $elements {
+  #{$element} {
+    border: none; // Verwijder de blauwe randen
+  }
+}
+
+.counter {
+  $i: 0;
+  @while $i < 10 {
+    .item-#{$i} {
+      width: $i * 10px;
+    }
+    $i: $i + 2;
+  }
+}
+
+$condition: true;
+.test-conditional {
+  @if $condition {
+    color: green;
+  } @else {
+    color: red;
+  }
+}
